@@ -5,63 +5,67 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Exercise2 Project.");
-        int agrade = 90;
-        int bgrade = 80;
-        int cgrade = 70;
-        int dfgrade = 60;
+        int aGrade = 90;
+        int bGrade = 80;
+        int cGrade = 70;
+        int dfGrade = 60;
         Console.WriteLine("What is your grade score? (INT ONLY!)");
-        int mgrade = int.Parse(Console.ReadLine());
-        string lgrade;
-        int pmgrade = 0;
-        bool ignoresign = false;
-        if (mgrade >= agrade)
+        int mGrade = int.Parse(Console.ReadLine());
+        string lGrade;
+        int pmGrade = 0;
+        bool ignoreSign = false;
+        if (mGrade >= aGrade)
         {
-            lgrade = "an A";
-            pmgrade = mgrade - agrade;
-            if (pmgrade >= 7)
+            lGrade = "an A";
+            pmGrade = mGrade - aGrade;
+            if (pmGrade >= 7)
             {
-                ignoresign = true;
+                ignoreSign = true;
             }
         }
-        else if (mgrade >= bgrade)
+        else if (mGrade >= bGrade)
         {
-            lgrade = "a B";
-            pmgrade = mgrade - bgrade;
+            lGrade = "a B";
+            pmGrade = mGrade - bGrade;
         }
-        else if (mgrade >= cgrade)
+        else if (mGrade >= cGrade)
         {
-            lgrade = "a C";
-            pmgrade = mgrade - cgrade;
+            lGrade = "a C";
+            pmGrade = mGrade - cGrade;
         }
-        else if (mgrade >= dfgrade)
+        else if (mGrade >= dfGrade)
         {
-            lgrade = "a D";
-            pmgrade = mgrade - dfgrade;
+            lGrade = "a D";
+            pmGrade = mGrade - dfGrade;
         }
-        else if (mgrade < dfgrade)
+        else if (mGrade < dfGrade)
         {
-            lgrade = "an F";
-            ignoresign = true;
+            lGrade = "an F";
+            ignoreSign = true;
         }
         else
         {
-            lgrade = "somehow, no grade";
-            ignoresign = true;
+            lGrade = "somehow, no grade";
+            ignoreSign = true;
         }
 
-        if ((pmgrade >= 7) && !ignoresign)
+        if ((pmGrade >= 7) && !ignoreSign)
         {
-            lgrade = lgrade + "+";
+            lGrade = lGrade + "+";
         }
-        else if ((pmgrade < 3) && !ignoresign)
+        else if ((pmGrade < 3) && !ignoreSign)
         {
-            lgrade = lgrade + "-";
+            lGrade = lGrade + "-";
         }
 
-        Console.WriteLine($"The grade you recieved was {lgrade}.");
-        if (mgrade >= cgrade)
+        Console.WriteLine($"The grade you recieved was {lGrade}.");
+        if (mGrade >= cGrade)
         {
             Console.WriteLine("Congrulations! You passing you!");
+        }
+        else
+        {
+            Console.WriteLine("Keep going, theres still time!");
         }
     }
 }

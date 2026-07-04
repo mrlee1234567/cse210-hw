@@ -71,7 +71,9 @@ class Program
             ttl += i;
         }
         nums.Sort();
-        float aver = ttl / nums.Count();
+        float fttl = ttl;
+        float fcount = nums.Count();
+        float aver = fttl / fcount;
         Console.WriteLine($"The sum is {ttl}");
         Console.WriteLine($"The average is {aver}");
         Console.WriteLine($"The largest number is {largest}");

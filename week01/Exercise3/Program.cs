@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
-        bool keepgoing = true;
+        bool keepGoing = true;
         Random genor = new Random();
         do
         {
@@ -24,7 +24,8 @@ class Program
             }
             else
             {
-                magicnum = genor.Next(1,100);
+                Console.WriteLine("Guess a number between 1 and 100");
+                magicnum = genor.Next(1,101);
             }
             bool notwin = true;
             string highlow = "";
@@ -35,12 +36,14 @@ class Program
                 if (guess > magicnum)
                 {
                     highlow = "lower ";
-                    // Console.WriteLine("Lower");
+                    Console.WriteLine("Lower");
+                    // these were commented out because the higlow variable contained the context of whether the guess needed to be higher or lower
                 }
                 else if (guess < magicnum)
                 {
                     highlow = "higher ";
-                    // Console.WriteLine("Higher");
+                    Console.WriteLine("Higher");
+                    // but i can see how it would be confusing if i didnt have it explicitly write to the console
                 }
                 else
                 {
@@ -52,9 +55,9 @@ class Program
             string goagn = Console.ReadLine();
             if (goagn == "n")
             {
-                keepgoing = false;
+                keepGoing = false;
             }
-        } while (keepgoing);
+        } while (keepGoing);
         Console.WriteLine("Ok, bey.");
     }
 }
