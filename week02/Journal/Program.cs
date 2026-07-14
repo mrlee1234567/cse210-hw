@@ -49,7 +49,7 @@ Here are some ideas you might consider:
 
 Report on what you have done to exceed requirements by adding a description of it in a comment in the Program.cs file. (you will know where i put this when i put this) */
         Console.WriteLine("Hello World! This is the Journal Project.");
-        Console.WriteLine("!!Just to let youu know, I did this late and w/o a group, dock me points if you must");
+        // Console.WriteLine("!!Just to let youu know, I did this late and w/o a group, dock me points if you must");
 
         Console.WriteLine("Boodup Buutyoomp!");
         DisplayJMenu journalMenu = new DisplayJMenu();

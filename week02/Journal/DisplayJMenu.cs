@@ -46,11 +46,15 @@ class DisplayJMenu
                 {
                     Console.WriteLine(i);
                 }
+                Console.WriteLine("(Enter to return to menu)");
+                Console.ReadLine();
             }
             else if (selsen == 3)
             {
                 // load (ie, load and read existing journal)
                 sl.Open(manifestFile);
+                Console.WriteLine("(Enter to return to menu)");
+                Console.ReadLine();
             }
             else if (selsen == 4)
             {
