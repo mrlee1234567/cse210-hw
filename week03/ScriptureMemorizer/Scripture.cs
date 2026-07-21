@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class Scripture
 {
-    static List<Verse> _verses = new List<Verse>();
-    static Reference _reference;
-    static Random _random;
-    static bool _canChoose;
+    private List<Verse> _verses = new List<Verse>();
+    private Reference _reference;
+    private Random _random;
+    private bool _canChoose;
 
     public Scripture(List<string> chapterContent, List<int> verses, string book, int chapter)
     {

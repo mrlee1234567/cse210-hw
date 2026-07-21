@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class ScriptureLoader
 {
-    public Scripture _scripture;
-    public string _scriptureFile;
-    public List<string> _scriptureContent;
-    public FileReader _reader = new FileReader();
+    private Scripture _scripture;
+    private string _scriptureFile;
+    private List<string> _scriptureContent;
+    private FileReader _reader = new FileReader();
 
     public ScriptureLoader(string book, int chapter, List<int> verses)
     {

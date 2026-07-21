@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 class Verse
 {
-    public int _verseNumber;
-    public List<Word> _text;
-    public string _verseString;
-    public bool _isHideable;
-    public string[] _splitList;
+    private int _verseNumber;
+    private List<Word> _text;
+    private string _verseString;
+    private bool _isHideable;
+    private string[] _splitList;
 
     public Verse(int verstNumber, string verseText)
     {

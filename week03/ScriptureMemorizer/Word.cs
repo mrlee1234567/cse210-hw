@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class Word
 {
-    public int _wordRef;
-    public string _printWord;
-    public bool _disabled;
-    public int _wordLen;
+    private int _wordRef;
+    private string _printWord;
+    private bool _disabled;
+    private int _wordLen;
 
     public Word(int wordRef,int wordLength)
     {
