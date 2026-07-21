@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Scripture
 {
-    static List<Verse> _verses;
+    static List<Verse> _verses = new List<Verse>();
     static Reference _reference;
     static Random _random;
     static bool _canChoose;
@@ -59,7 +59,7 @@ class Scripture
         {
             RemoveWord();
         }
-        string res = "";
+        string res = $"{_reference.GetReference()}\n";
         
         foreach (Verse i in _verses)
         {

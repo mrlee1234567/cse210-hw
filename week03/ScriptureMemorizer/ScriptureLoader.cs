@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class ScriptureLoader
 {
-    static Scripture _scripture;
-    static string _scriptureFile;
-    static List<string> _scriptureContent;
-    static FileReader _reader = new FileReader();
+    public Scripture _scripture;
+    public string _scriptureFile;
+    public List<string> _scriptureContent;
+    public FileReader _reader = new FileReader();
 
     public ScriptureLoader(string book, int chapter, List<int> verses)
     {
@@ -45,7 +45,7 @@ class ScriptureLoader
             Console.WriteLine("cannot find that scripture");
         }
         List<int> verses = new List<int>();
-        for (int i = firstVerse; i < lastVerse + 1; i++)
+        for (int i = firstVerse - 1; i < lastVerse; i++)
         {
             verses.Add(i);
         }

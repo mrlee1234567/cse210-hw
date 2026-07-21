@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class Word
 {
-    static int _wordRef;
-    static string _printWord;
-    static bool _disabled;
-    static int _wordLen;
+    public int _wordRef;
+    public string _printWord;
+    public bool _disabled;
+    public int _wordLen;
 
     public Word(int wordRef,int wordLength)
     {
@@ -36,12 +36,12 @@ class Word
         if (!_disabled)
         {
             _disabled = true;
-            string ret = "";
-            for (int i = 0; i < _wordLen; i++)
-            {
-                ret += "_";
-            }
-            _printWord = ret;
+            // string ret = "";
+            // for (int i = 0; i < _wordLen; i++)
+            // {
+            //     ret += "_";
+            // }
+            // _printWord = ret;
         }
     }
 

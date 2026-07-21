@@ -1,4 +1,5 @@
-// its supposed to take the scripture in the form of a txt file, however all it does is repeats the last line of the next verse over and over again. i cannot figure out how to fix it, i have tried everything i can think of. i know where the problem is, i just dont know how to stop it. give me a zero, i dont care, im not losing anymore sleep over this damn garbage anymore
+// It takes in a scripture in the form a a text file and asks the user for the range of what they want to memorize. only 1 Nephi 1 is included, but theoretically more could be added
+
 
 using System;
 

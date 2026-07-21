@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 class Verse
 {
-    static int _verseNumber;
-    static List<Word> _text;
-    static string _verseString;
-    static bool _isHideable;
-    static string[] _splitList;
+    public int _verseNumber;
+    public List<Word> _text;
+    public string _verseString;
+    public bool _isHideable;
+    public string[] _splitList;
 
     public Verse(int verstNumber, string verseText)
     {
@@ -19,7 +19,7 @@ class Verse
         for (int i = 0; i < splits.Count(); i++)
         {
             string iq;
-            iq = string.Copy(splits[currentInd]);
+            iq = splits[currentInd];
             int wLen = iq.Count();
             garbage.Add(BuildWord(currentInd,wLen));
             // garbage.Distinct();
@@ -38,7 +38,7 @@ class Verse
 
     public string GetVerse()
     {
-        string res = $"{_verseNumber}:";
+        string res = $"{_verseNumber + 1}:";
         
         foreach (Word i in _text)
         {
@@ -64,9 +64,11 @@ class Verse
             bool hid = false;
             foreach (Word i in _text)
             {
-                if (i.CheckDisabled())
+                if (!i.CheckDisabled())
                 {
                     hid = true;
+                    _isHideable = true;
+                    return _isHideable;
                 }
             }
             _isHideable = hid;
@@ -81,7 +83,7 @@ class Verse
         for (int i = 0; i < _text.Count; i++)
         {
             Word iq = _text[i];
-            if (iq.CheckDisabled())
+            if (!iq.CheckDisabled())
             {
                 viableInts.Add(i);
             }

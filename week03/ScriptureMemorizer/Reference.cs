@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 class Reference
 {
-    static string _book;
-    static List<int> _verses;
-    static string _fullReference;
-    static int _chapter;
-    static string _verseReference;
+    private string _book;
+    private List<int> _verses;
+    private string _fullReference;
+    private int _chapter;
+    private string _verseReference;
 
     public Reference(int singleVerse, int chap, string book)
     {
