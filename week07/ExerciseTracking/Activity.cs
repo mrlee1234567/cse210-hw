@@ -11,12 +11,23 @@ abstract class Activity
         _time = time;
     }
 
-    public abstract string GetSummary();
+    protected abstract string GetActivityType();
+
+    public virtual string GetSummary()
+    {
+        string res;
+        double dist = GetDistance();
+        double spd = CalculateSpeed();
+        double pce = CalculatePace();
+        string aType = GetActivityType();
+        res = $"{GetDate()} {aType} ({_time} min): Distance {dist}km, Speed {spd} kph, Pace {pce} min/km";
+        return res;
+    }
 
     protected double CalculateSpeed(int time, double distance)
     {
         double doubletime = time;
-        double spd = (doubletime / distance) * 60;
+        double spd = (distance / doubletime) * 60;
         return spd;
     }
 
@@ -61,6 +72,8 @@ abstract class Activity
         string res = $"{date.Day} {date.Month} {date.Year}";
         return res;
     }
+
+    protected abstract double GetDistance();
 }
 /*
 Activity

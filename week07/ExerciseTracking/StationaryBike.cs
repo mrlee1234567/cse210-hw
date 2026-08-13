@@ -4,6 +4,7 @@ using System.Collections.Generic;
 class StationaryBike : Activity
 {
     private double _speed;
+    private static string _activityName = "Stationary Bike";
 
     public StationaryBike(int time, double speed) : base(time)
     {
@@ -11,12 +12,14 @@ class StationaryBike : Activity
         // _distance = DistanceFromSpeed(speed);
     }
 
+    protected override string GetActivityType()
+    {
+        return _activityName;
+    }
+
     public override string GetSummary()
     {
-        string res;
-        double pace = CalculatePace(_speed);
-        double distance = DistanceFromPace(pace);
-        res = $"{GetDate()} Satationary Bike ({_time} min): Distance {distance} km, Speed {_speed} kph, Pace {pace} min/km";
+        string res = base.GetSummary();
         return res;
     }
 
@@ -28,6 +31,11 @@ class StationaryBike : Activity
     protected override double CalculateSpeed()
     {
         return _speed;
+    }
+
+    protected override double GetDistance()
+    {
+        return DistanceFromPace(CalculatePace());
     }
 }/*
 StationaryBike

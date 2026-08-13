@@ -4,18 +4,21 @@ using System.Collections.Generic;
 class Running : Activity
 {
     private double _distance;
+    private static string _activityName = "Running";
 
     public Running(int time, double distance) : base(time)
     {
         _distance = distance;
     }
 
+    protected override string GetActivityType()
+    {
+        return _activityName;
+    }
+
     public override string GetSummary()
     {
-        string res;
-        double speed = CalculateSpeed();
-        double pace = CalculatePace();
-        res = $"{GetDate()} Running ({_time} min): Distance {_distance}km, Speed {speed} kph, Pace {pace} min/km";
+        string res = base.GetSummary();
         return res;
     }
 
@@ -26,6 +29,11 @@ class Running : Activity
     protected override double CalculateSpeed()
     {
         return CalculateSpeed(_time,_distance);
+    }
+
+    protected override double GetDistance()
+    {
+        return _distance;
     }
 }
 /*

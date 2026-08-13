@@ -5,30 +5,33 @@ class LapSwimming : Activity
 {
     // private stati_poolLen = 50;
     private int _laps;
+    private static string _activityName = "Lap Swimming";
 
     public LapSwimming(int time, int laps) : base(time)
     {
         _laps = laps;
     }
 
-    private double PoolDistance()
+    protected override double GetDistance()
     {
         return (_laps * 50) / 1000;
     }
 
+    protected override string GetActivityType()
+    {
+        throw new NotImplementedException();
+    }
+
     public override string GetSummary()
     {
-        string res;
-        double distance = PoolDistance();
-        double pace = CalculatePace();
-        double speed = CalculateSpeed();
-        res = $"{GetDate()} Lap Swimming ({_time} min): Distance {distance}km, Speed {speed}kph, Pace {pace}min/km, Laps {_laps} laps";
+        string res = base.GetSummary();
+        res += $", Laps {_laps} laps";
         return res;
     }
 
     protected override double CalculatePace()
     {
-        return CalculatePace(_time,PoolDistance());
+        return CalculatePace(_time,GetDistance());
     }
 
     protected override double CalculateSpeed()
