@@ -19,7 +19,8 @@ class LapSwimming : Activity
 
     protected override string GetActivityType()
     {
-        throw new NotImplementedException();
+        string res = _activityName;
+        return res;
     }
 
     public override string GetSummary()
